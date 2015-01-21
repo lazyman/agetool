@@ -5,20 +5,17 @@ import java.util.Calendar;
 import cn.huxi.tools.util.ChineseCalendar;
 
 public class AgeTool {
-	public static final ChineseCalendar darlinBirthday = new ChineseCalendar(1987, 12, 28);
-	public static final ChineseCalendar meBirthday = new ChineseCalendar(1984, 02, 26);
+	public static final ChineseCalendar darlinBirthday = new ChineseCalendar(1987, 11, 28);
+	public static final ChineseCalendar meBirthday = new ChineseCalendar(1984, 1, 26);
 
 	public static void main(String[] args) {
-		ChineseCalendar birthday = new ChineseCalendar(true, 1987, 5, 7);
-		//
-//		birthday = darlinBirthday;
-		
-		ChineseCalendar date = new ChineseCalendar(true, 1988, 1, 15);
-		
-		System.out.println(calcAge(birthday, date));
 		int age = calcAge(darlinBirthday);
-		System.out.println(age);
-		int[] month = MorF.MFarr[age - 27];
+		System.out.println(darlinBirthday);
+		System.out.println("当前年龄：" + age);
+		
+		ChineseCalendar now = new ChineseCalendar();
+		System.out.println("当前农历：" + now.getSimpleChineseDateString());
+		int[] month = MorF.MFarr[age - 26];
 		
 		System.out.println("1 2 3 4 5 6 7 8 9 101112");
 		for(int i=0; i<month.length; i++) {
